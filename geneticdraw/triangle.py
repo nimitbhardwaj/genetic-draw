@@ -30,3 +30,5 @@ class Triangle(object):
         '''
         dr.polygon([self.p1, self.p2, self.p3], fill=self.color)
         return True
+    def __repr__(self):
+        return 'T'
