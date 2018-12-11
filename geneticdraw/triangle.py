@@ -1,7 +1,7 @@
 import random
 
 class Triangle(object):
-    def __init__(self, p1, p2, p3, col):
+    def __init__(self, p1, p2, p3, col, h):
         '''
         p1, p2, p3: The 2-D tuples denoting the position of three points of 
                     triangle in the image.
@@ -12,6 +12,7 @@ class Triangle(object):
         self.p2 = p2
         self.p3 = p3
         self.color = col
+        self.h = h
 
     @staticmethod
     def getRandomTriangle(w, h):
@@ -22,7 +23,8 @@ class Triangle(object):
         p2 = (random.randint(0, w), random.randint(0, h))
         p3 = (random.randint(0, w), random.randint(0, h))
         col = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-        return Triangle(p1, p2, p3, col)
+        h = random.random()
+        return Triangle(p1, p2, p3, col, h)
 
     def draw(self, dr):
         '''
